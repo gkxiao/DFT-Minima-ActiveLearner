@@ -1,2 +1,2 @@
-# DFT-Minima-ActiveLearner-
+![find global minimum process](find-global-minimum-process.png)
 An Active Learning framework designed to ​minimize the use of costly DFT computations​ in the search for global minimum energy configurations of molecular systems. The algorithm leverages inexpensive g-xTB pre-screening and iterative surrogate model training (like linear regression) to decide the most promising candidates for subsequent DFT evaluation. This method efficiently navigates the conformational space, aiming to find the global energy minimum with a fraction of the full computational cost. Includes scripts for simulation, analysis, and visualization of the learning process.
