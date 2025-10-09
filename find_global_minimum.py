@@ -173,9 +173,9 @@ plt.figure(figsize=(12, 5))
 
 plt.subplot(1, 2, 1)
 plt.plot([h['dft_count'] for h in history], [h['min_energy'] for h in history], 'o-')
-plt.xlabel('DFT计算次数')
-plt.ylabel('发现的最低 DFT 能量')
-plt.title('最低能量发现进程')
+plt.xlabel('Number of DFT calls')
+plt.ylabel('Lowest DFT energy value found')
+plt.title('Minimum energy discovery process')
 plt.grid(True)
 
 # 标记能量改进的点
@@ -191,9 +191,9 @@ if improvement_points:
 
 plt.subplot(1, 2, 2)
 plt.plot([h['iteration']+1 for h in history], [h['rmse'] for h in history], 's-', label='RMSE')
-plt.xlabel('迭代次数')
+plt.xlabel('Number of Iterations')
 plt.ylabel('RMSE')
-plt.title('模型预测误差')
+plt.title('Model Prediction Error')
 plt.legend()
 plt.grid(True)
 
