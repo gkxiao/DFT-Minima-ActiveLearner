@@ -66,7 +66,9 @@ DFT SPE：1000 / 1000
                   优化下一轮计算策略
 ```
 
-问题的本质：优化“低计算方法的构象系综 → DFT构象系综”这条计算链条中的高精度计算资源分配。
+问题的本质：优化“低计算量方法的构象系综 → DFT构象系综”这条计算链条中的高精度计算资源分配。
+
+总的来说，不是要证明 xTB 是不是“足够准确”，也不是要证明起始构象系综是否找到了所有构象，而是利用低成本构象生成与高精度 DFT 结果之间的实际关系，寻找 DFT 资源投入的最小充分范围。而是mixed-precision conformational ensemble resource allocation / early stopping framework。
 
 ### 示例
 
