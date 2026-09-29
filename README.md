@@ -40,28 +40,30 @@ DFT SPE：1000 / 1000
 这两个问题构成一个闭环:
 
 ```
-                 CREST / xTB
-                     │
-                     ▼
-             Initial Ensemble
-                 Coverage
-                     │
-                     ▼
-              DFT calculations
-                     │
-          ┌──────────┴──────────┐
-          │                     │
-       中途状态                完成状态
-          │                     │
-          ▼                     ▼
-   Early Stopping          Final Coverage
-       Analysis              Analysis
-          │                     │
-          └──────────┬──────────┘
-                     ▼
-             下一轮 CREST 参数
-             / DFT 计算策略优化
-
+                 Low-cost conformational ensemble
+                              │
+                              ▼
+                    ┌─────────────────┐
+                    │  Initial CREST  │
+                    │ / xTB ensemble  │
+                    └────────┬────────┘
+                             │
+                expensive DFT SPE calculations
+                             │
+                 ┌───────────┴───────────┐
+                 │                       │
+             DFT进行中                 DFT完成
+                 │                       │
+                 ▼                       ▼
+        Early Stopping          Final Ensemble Reduction
+        提前停止评估               最终构象缩减评估
+                 │                       │
+                 │                       │
+        “现在停是否合理？”       “事后最少可以保留多少？”
+                 │                       │
+                 └───────────┬───────────┘
+                             ▼
+                  优化下一轮计算策略
 ```
 
 问题的本质：优化“低计算方法的构象系综 → DFT构象系综”这条计算链条中的高精度计算资源分配。
